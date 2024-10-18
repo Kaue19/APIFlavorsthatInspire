@@ -25,7 +25,7 @@ namespace Api.Controllers
             return Ok(pedidos);
         }
 
-        [HttpGet("GetProdutoId/{id}")]
+        [HttpGet("GetPedidoId/{id}")]
         public async Task<ActionResult<PedidoModel>> GetPedidoId(int id)
         {
             PedidoModel pedido = await _pedidosRepositorio.GetById(id);
@@ -40,14 +40,14 @@ namespace Api.Controllers
         }
 
         [HttpPut("UpdatePedido/{id:int}")]
-        public async Task<ActionResult<ProdutoModel>> UpdatePedido(int id, [FromBody] PedidoModel pedidoModel)
+        public async Task<ActionResult<PedidoModel>> UpdatePedido(int id, [FromBody] PedidoModel pedidoModel)
         {
             pedidoModel.PedidoId = id;
             PedidoModel pedido = await _pedidosRepositorio.UpdatePedido(pedidoModel, id);
             return Ok(pedido);
         }
 
-        [HttpDelete("DeleteProduto/{id:int}")]
+        [HttpDelete("DeletePedido/{id:int}")]
         public async Task<ActionResult<PedidoModel>> DeletePedido(int id)
         {
             bool deleted = await _pedidosRepositorio.DeletePedido(id);

@@ -21,6 +21,8 @@ builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
 builder.Services.AddScoped<IPedidoRepositorio, PedidoRepositorio>();
+builder.Services.AddScoped<IPedidoProdutoRepositorio, PedidoProdutoRepositorio>();
+builder.Services.AddScoped<IStatusDaEntregaRepositorio, StatusDaEntregaRepositorio>();
 
 builder.Services.AddCors(options =>
 {

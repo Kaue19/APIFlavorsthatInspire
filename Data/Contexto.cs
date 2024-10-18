@@ -15,6 +15,8 @@ namespace Api.Data
         public DbSet<UsuarioModel> Usuario { get; set; }
         public DbSet<ProdutoModel> Produto { get; set; }
         public DbSet<PedidoModel> Pedido { get; set; }
+        public DbSet<PedidoProdutoModel> PedidoProduto { get; set; }
+        public DbSet<StatusDaEntregaModel> StatusDaEntrega { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +25,8 @@ namespace Api.Data
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new ProdutoMap());
             modelBuilder.ApplyConfiguration(new PedidoMap());
+            modelBuilder.ApplyConfiguration(new PedidoProdutoMap());
+            modelBuilder.ApplyConfiguration(new StatusDaEntregaMap());
             base.OnModelCreating(modelBuilder);
         }
 
