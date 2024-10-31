@@ -8,6 +8,8 @@ namespace Api.Models
 
         public string ProdutoNome { get; set; } = string.Empty;
 
+        public string ProdutoFoto { get; set; } = string.Empty;
+
         public string ProdutoDescricao { get; set; } = string.Empty;
         public int CategoriaId { get; set; }
         public double ProdutoPreco { get; set; } 

@@ -10,6 +10,7 @@ namespace Api.Data
         {
             builder.HasKey(x => x.ProdutoId);
             builder.Property(x => x.ProdutoNome).IsRequired().HasMaxLength(255);
+            builder.Property(x => x.ProdutoFoto).IsRequired().HasMaxLength(255);
             builder.Property(x => x.ProdutoDescricao).IsRequired().HasMaxLength(255);
             builder.Property(x => x.ProdutoPreco).IsRequired().HasMaxLength(255);
             builder.Property(x => x.CategoriaId).IsRequired();

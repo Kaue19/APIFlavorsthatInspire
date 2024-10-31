@@ -45,6 +45,7 @@ namespace Api.Repositorios
                 produtos.ProdutoDescricao = produto.ProdutoDescricao;
                 produtos.ProdutoPreco = produto.ProdutoPreco;
                 produtos.CategoriaId = produto.CategoriaId;
+                produtos.ProdutoFoto = produto.ProdutoFoto;
                 produtos.ProdutoDesconto = produto.ProdutoDesconto;
                 _dbContext.Produto.Update(produtos);
                 await _dbContext.SaveChangesAsync();
