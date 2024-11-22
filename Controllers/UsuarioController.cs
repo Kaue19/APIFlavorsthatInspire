@@ -32,6 +32,41 @@ namespace Api.Controllers
             return Ok(usuario);
         }
 
+        [HttpPost("Login")]
+        public async Task<ActionResult<UsuarioModel>> Login([FromBody] UsuarioModel usuarioModel)
+        {
+            UsuarioModel usuario = await _usuariosRepositorio.Login(usuarioModel.Email , usuarioModel.Senha );
+            return Ok(usuario);
+        }
+
+
+
+
+
+
+
+        [HttpPost("Cadastro")]
+        public async Task<ActionResult<UsuarioModel>> Cadastro([FromBody] UsuarioModel usuarioModel)
+        {
+            try
+            {
+                // Chama o repositório para cadastrar o usuário
+                var usuario = await _usuariosRepositorio.CadastrarUsuario(usuarioModel);
+
+                // Retorna o usuário criado com status 201 (Created)
+                return CreatedAtAction(nameof(GetUsuarioId), new { id = usuario.UsuarioId }, usuario);
+            }
+            catch (Exception ex)
+            {
+                // Caso haja erro, retorna uma resposta com erro
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+
         [HttpPost("CreateUsuario")]
         public async Task<ActionResult<UsuarioModel>> InsertUsuario([FromBody] UsuarioModel usuarioModel)
         {

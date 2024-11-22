@@ -10,7 +10,6 @@ namespace Api.Data
 
         }
 
-        public DbSet<UsersModel> User { get; set; }
         public DbSet<CategoriaModel> Categoria { get; set; }
         public DbSet<UsuarioModel> Usuario { get; set; }
         public DbSet<ProdutoModel> Produto { get; set; }
@@ -20,7 +19,6 @@ namespace Api.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UsersMap());
             modelBuilder.ApplyConfiguration(new CategoriaMap());
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new ProdutoMap());
